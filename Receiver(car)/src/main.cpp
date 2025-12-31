@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial hc12(9, 8); // RX, TX (подключено к TX и RX HC-12)
+SoftwareSerial hc12(9, 8); // RX, TX (підключено до TX и RX HC-12)
 
 int pinsMotor1[] = {A2, A3};
 int pinsMotor2[] = {A0, A5};
@@ -45,9 +45,9 @@ void loop() {
 
 
 
-    String receivedData = hc12.readStringUntil('\n'); // Чтение до символа новой строки
+    String receivedData = hc12.readStringUntil('\n'); // Читання до символу нового рядка
 
-    // Разделение строки по запятой
+    // Поділ рядка по комі
     int separatorIndex = receivedData.indexOf(',');
 
     if (separatorIndex > 0) {
@@ -57,7 +57,7 @@ void loop() {
       int FB = var1Str.toInt();
       int LR = var2Str.toInt();
 
-      // Вывод полученных значений в монитор порта
+      // Виведення отриманих значень монітор порту
       Serial.print("FB: ");
       Serial.print(FB);
       Serial.print(" | LR: ");

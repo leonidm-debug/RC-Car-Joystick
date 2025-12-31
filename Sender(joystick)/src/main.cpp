@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial hc12(9, 8); // RX, TX (подключено к TX и RX HC-12)
+SoftwareSerial hc12(9, 8); // RX, TX (підключено до TX и RX HC-12)
 
 const int LRpin = A4;
 const int FBpin = A2;
@@ -10,7 +10,7 @@ int LR = 0;
 int FB = 0;
 
 void setup() {
-  Serial.begin(9600);     // Монитор порта
+  Serial.begin(9600);     // Монітор порта
   hc12.begin(9600);       // HC-12
   Serial.println("Sender launched.");
 }
@@ -27,5 +27,4 @@ void loop(){
   Serial.println("Sent: " + message);
   Serial.println("FB: " + String(FB));
   Serial.println("LR: " + String(LR));
-  //delay(500); // раз в секунду
 }
