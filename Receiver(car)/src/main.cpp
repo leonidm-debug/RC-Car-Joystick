@@ -11,6 +11,7 @@ int pinsMotor2[] = {A0, A5};
 // Y - вперед/назад
 // X - ліво/право
 // Якщо x або y дорівнює 0, то двигуни не рухаються
+
 void controlMotors(int x, int y){
   int speed1 = y + x;
   int speed2 = y - x;
@@ -63,27 +64,5 @@ void loop() {
       Serial.println(LR);
       controlMotors(FB, LR);
     }
-
-    /*
-   if (!buzzing) {
-    // запустить звук на 5 секунд
-    tone(buzzerPin, 1000);  // 1000 Гц — можно менять
-    buzzStart = millis();
-    buzzing = true;
   }
-
-  // остановить звук, когда прошло buzzTime
-  if (buzzing && millis() - buzzStart >= buzzTime) {
-    noTone(buzzerPin);
-    buzzing = false;
-    // если нужно выполнить это лишь один раз, дальше можно ничего не делать
-    // или можно поставить while(true); чтобы остановить loop()
-    while (true) {
-      // всё поле пусто — без дальнейших звуков
-    }
-
-    // Serial.println("Get: " + incoming);
-
-  }*/
-}
 }
